@@ -1,0 +1,6 @@
+# git full logs ignore
+logs/
+# full ignore txt
+/*.txt
+# full ignore txt in recommendation
+recommendation/*.txt

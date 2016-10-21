@@ -1,0 +1,5 @@
+https://news.yandex.ru/index.rss
+http://www.gazeta.ru/export/gazeta_rss.xml 
+http://lenta.ru/l/r/EX/import.rss
+http://law.edu.ru/rss/news.rss 
+https://www.searchengines.ru/feed

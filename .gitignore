@@ -4,3 +4,8 @@ logs/
 /*.txt
 # full ignore txt in recommendation
 recommendation/*.txt
+Js.InHTMl/*.txt
+Python.Flask/*.txt
+Python.Other/*.txt
+recommendation/*.txt
+web/*.txt

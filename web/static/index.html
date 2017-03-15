@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	           "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8" />
+        <title>Первое осмысленое творение</title>
+    </head>
+    <body>
+        <h2>Добро пожаловать на сайт Рога и копыта</h2>
+        <form>
+            <p>Давайте заполним форму?)</p>
+            <p>
+                Имя: <input type="text" name="entryName" value=''><br><br>
+                Фамилия: <input type="text" name="entryLastame" value=''><br><br>
+                Отчество: <input type="text" name="entryPatronymic"value=''><br><br>
+                Возраст: <input type="text" name="entryAge"><br><br>
+                Пол: <input type="radio" name="sex" value="M">Мужской<input type="radio" name="sex" value="W">Женский<br>
+            </p>
+            <button onclick="run()">Кнопка</button>
+        </form>
+        <script>
+            function run() {
+            list = document.body.querySelectorAll('input');
+            for( var i=0; i < list.length; i++) {
+                alert(list[i].value);
+            }
+            }
+        </script>
+    </body>
+</html>

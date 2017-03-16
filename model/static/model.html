@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="C:\Template\css\bootstrap.css">
+        <!-- <script src="C:\git-progect\model\script\model.js"></script> -->
+        <script src="C:\git-progect\model\script\performance.js"></script>
+        <meta charset="utf-8" />
+        <title>Простая модель парикмахера</title>
+    </head>
+    <body>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Статус парикмахера</th>
+                    <th>Системное время</th>
+                    <th>Клиентов в очереди</th>
+                    <th>Текущее событие</th>
+                    <th>Следующее событие</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>%1</th>
+                    <th>%2</th>
+                    <th>%3</th>
+                    <th>%4</th>
+                    <th>%5</th>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            var date1 = {'atr1':1,'atr2':2,'atr3':3,'atr4':4,'atr5':5};
+            var date2 = {'atr1':'a','atr2':'b','atr3':'c','atr4':'d','atr5':'e'};
+            var date3 = {'atr1':'a1','atr2':'b2','atr3':'c3','atr4':'d4','atr5':'e5'};
+            var dataList = [date1, date2, date3];
+            var table = document.querySelector('tbody');
+            addDataTable(table,dataList);
+        </script>
+    </body>
+</html>

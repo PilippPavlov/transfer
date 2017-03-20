@@ -131,7 +131,7 @@ function Event(options) {
 function ModelMachine() {
     this._currentEventList = [];
     this._nextEventList = [];
-    this._ststeSystem = {};
+    this._stateSystem = {};
     this._static = 0;
 };
 ModelMachine.prototype.sequencingNextEvents = function () {

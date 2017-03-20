@@ -105,6 +105,10 @@ Transactus.prototype.setTimeOfProcessing = function(time) {
 Transactus.prototype.getTimeOfProcessing = function() {
     return this._timeOfProcessing;
 };
+Transactus.prototype.constructor = Transactus();
+Transactus.prototype.destructor = function(){
+    return null;
+};
 function Barber() {
     this._status = 'Free';//or Busy
 };
@@ -119,7 +123,38 @@ barber.prototype.setStatus = function() {
         this._status = 'Free';
     }
 };
+function Event(options) {
+    this.timeEvent = options.time;
+    this.idEvent = options.id;
+    this.ratingEvent = options.rating;
+};
 function ModelMachine() {
+    this._currentEventList = [];
+    this._nextEventList = [];
+    this._ststeSystem = {};
+    this._static = 0;
+};
+ModelMachine.prototype.sequencingNextEvents = function () {
+    //Сортируме по времени, в порядке от большего к меньшему
+    // таким образом наиболее близкое событие будет в конце
+    // списка, что позволет с наимешими затратами времени его извлечь
+    this._nextEventList.sort(function(a.timeEvent,b.timeEvent) {
+        return (a.timeEvent >= b.timeEvent) ? 1 : -1;
+    });
+};
+ModelMachine.prototype.sequencingCureentEvents = function () {
+    // Сортируме по рангу, в порядре от меньшего к большему
+    // таким образом наиболее приоритетное событие будет в конце
+    // списка, что позволет с наимешими затратами времени его извлечь
+    this._currentEventList.sort(function (a.ratingEvent,b.ratingEvent) {
+        return (a.ratingEvent <= b.ratingEvent)? 1: -1;
+    });
+};
+ModelMachine.prototype.getNextTimeEvent = function() {
+    return this._nextEventList.pop();
+};
+ModelMachine.prototype.getNextRatingEvent = function() {
+    return this._currentEventList.pop();
 };
 /*/
 ModelMachine.prototype.init = function () {
@@ -128,9 +163,6 @@ ModelMachine.prototype.init = function () {
     this._distributionLaw = new UniformGenerate({'factor':1 220 703 125, 'increment':7, 'module':2147483647, 'primary':7,'beginInterval':10,'endInterval':60});
     this._pointOfEntry = new PointOfEntry({'transactusConstructor':Transactus.prototype.constructor()});
     this._barber = new Barber();
-    this._currentEvent = [];
-    this._nextEvent = [];
-    this._static = 0;
     this._pointOfEntry.setGenerate(this._distributionLaw);
 };
 ModelMachine.prototype.renderEvent = function(currentTime) {

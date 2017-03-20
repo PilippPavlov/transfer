@@ -7,6 +7,12 @@
         <title>Простая модель парикмахера</title>
     </head>
     <body>
+        <form class="form-inline" role="form">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="beginInterval">Начало интервала распределения</label>
+            <!--<input Class="form-control" id="beginInterval">-->
+        </div>
+        </form>
         <table class="table">
             <thead>
                 <tr>
@@ -31,7 +37,8 @@
             var date1 = {'atr1':1,'atr2':2,'atr3':3,'atr4':4,'atr5':5};
             var date2 = {'atr1':'a','atr2':'b','atr3':'c','atr4':'d','atr5':'e'};
             var date3 = {'atr1':'a1','atr2':'b2','atr3':'c3','atr4':'d4','atr5':'e5'};
-            var dataList = [date1, date2, date3];
+            var date4 = {'atr1':'a2','atr2':'b1','atr3':'c4'};
+            var dataList = [date1, date2, date3,date4];
             var table = document.querySelector('tbody');
             addDataTable(table,dataList);
         </script>

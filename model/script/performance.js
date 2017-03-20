@@ -11,7 +11,7 @@ function addDataTable(parentElm,dataList) {
                 if(dataList[i][key] != undefined)
                     tableh.insertAdjacentHTML('beforeEnd',dataList[i][key]);
                 else
-                    tableh.insertAdjacentHTML('beforeEnd','');
+                    tableh.insertAdjacentHTML('beforeEnd',' ');
                 tableRow.appendChild(tableh);
             }
             iframe.appendChild(tableRow);
